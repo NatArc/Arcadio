@@ -30,7 +30,7 @@ class Areas:
             b = x_vals[-1]
         
         mask = (x_vals >= a) & (x_vals <= b)
-        area = np.trapz(np.abs(y1[mask] - y2[mask]), x_vals[mask])
+        area = np.trapezoid(np.abs(y1[mask] - y2[mask]), x_vals[mask])
         return area
     
     def plot_all_with_areas(self, func_str, x_min=-10, x_max=10, a=None, b=None):
@@ -84,7 +84,7 @@ class Areas:
         
         # Summary stats
         if a and b:
-            print(f"\n📊 AREAS SUMMARY [{a:.1f}, {b:.1f}]")
+            print(f"\nAREAS SUMMARY [{a:.1f}, {b:.1f}]")
             print(f"  f(x) area:     {self.area_between_curves(f_x, np.zeros_like(f_x), x_vals, a, b):.4f}")
             print(f"  f'(x) area:    {self.area_between_curves(f_prime, np.zeros_like(f_prime), x_vals, a, b):.4f}")
             print(f"  ∫f(x) area:    {self.area_between_curves(f_int, np.zeros_like(f_int), x_vals, a, b):.4f}")
