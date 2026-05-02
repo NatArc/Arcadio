@@ -55,7 +55,7 @@ class Areas:
                 mask = (x_vals >= a) & (x_vals <= b)
                 area_f = np.trapezoid(f_x[mask], x_vals[mask])
                 ax1.fill_between(x_vals[mask], 0, f_x[mask], alpha=0.4, color='cyan')
-                ax1.set_title(f'CYAN: f(x) Area[{a:.1f},{b:.1f}] = {area_f:.4f}', 
+                ax1.set_title(f'Area Under Curve: f(x) Area[{a:.1f},{b:.1f}] = {area_f:.4f}', 
                             fontsize=14, color='cyan', pad=10)
             ax1.axhline(0, color='gray', alpha=0.3)
             ax1.axvline(0, color='gray', alpha=0.3)
@@ -68,7 +68,7 @@ class Areas:
                 mask = (x_vals >= a) & (x_vals <= b)
                 area_p = np.trapezoid(np.abs(f_prime[mask]), x_vals[mask])
                 ax2.fill_between(x_vals[mask], 0, np.abs(f_prime[mask]), alpha=0.4, color='lime')
-                ax2.set_title(f'LIME: |f\'(x)| Area[{a:.1f},{b:.1f}] = {area_p:.4f}', 
+                ax2.set_title(f'Area Under Derivative: f\'(x) Area[{a:.1f},{b:.1f}] = {area_p:.4f}', 
                             fontsize=14, color='lime', pad=10)
             ax2.axhline(0, color='gray', alpha=0.3)
             ax2.axvline(0, color='gray', alpha=0.3)
@@ -84,7 +84,7 @@ class Areas:
                 ax3.fill_between(x_vals[mask], 0, f_int[mask], alpha=0.4, color='gold')
                 ax3.axvline(a, color='white', linestyle='--', alpha=0.7)
                 ax3.axvline(b, color='white', linestyle='--', alpha=0.7)
-                ax3.set_title(f'GOLD: ∫f(x)dx [{a:.1f},{b:.1f}] = F({b:.1f})-F({a:.1f}) = {area_i:.4f}', 
+                ax3.set_title(f'Definite Integral: ∫f(x)dx [{a:.1f},{b:.1f}] = F({b:.1f})-F({a:.1f}) = {area_i:.4f}', 
                             fontsize=14, color='gold', pad=10)
             ax3.axhline(0, color='gray', alpha=0.3)
             ax3.axvline(0, color='gray', alpha=0.3)
@@ -92,6 +92,7 @@ class Areas:
             ax3.legend()
             
             plt.tight_layout()
+            plt.subplots_adjust(top=0.88, hspace=0.4)
             plt.show()
             
             print(f"\nAreas Summary:")
