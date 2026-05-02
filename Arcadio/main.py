@@ -23,7 +23,7 @@ def get_area_range():
         except: print("❌ Examples: '0 2', '-1 3'"); continue
 
 def main():
-    print("CALCULUS MASTER")
+    print("Calculus-Powered Graph")
     print("1: f(x)")
     print("2: f(x) + f'(x)")
     print("3: f(x) + ∫f(x)")
@@ -39,7 +39,7 @@ def main():
         choice = input("\n🎮 Choose (1/2/3/4/0): ").strip()
         
         if choice == '0': 
-            print("🏆 PROJECT REQUIREMENTS 100% COMPLETE!")
+            print("Bye!")
             break
             
         func = input("📈 f(x): ").strip()
