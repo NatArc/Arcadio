@@ -10,6 +10,9 @@ class Areas:
     def numerical_derivative(self, func_np, x_vals, dx=1e-6):
         deriv = np.zeros_like(x_vals)
         deriv[1:-1] = (func_np(x_vals[2:]) - func_np(x_vals[:-2])) / (2 * dx)
+        if len(x_vals) > 1:
+            deriv[0] = (func_np(x_vals[1]) - func_np(x_vals[0])) / dx
+            deriv[-1] = (func_np(x_vals[-1]) - func_np(x_vals[-2])) / dx
         return deriv
     
     def numerical_integral(self, func_np, x_vals):
