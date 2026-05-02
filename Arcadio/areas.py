@@ -21,7 +21,6 @@ class Areas:
         return integral
     
     def area_between_curves(self, y1, y2, x_vals, a=None, b=None):
-        """Area between two curves from a to b (or total)"""
         if a is None:
             a = x_vals[0]
         if b is None:
@@ -32,7 +31,6 @@ class Areas:
         return area
     
     def plot_all_with_areas(self, func_str, x_min=-10, x_max=10, a=None, b=None):
-        """PLOT EVERYTHING: f(x), f'(x), ∫f(x) + areas shaded!"""
         func_sym = sympify(func_str)
         func_np = lambdify(self.x_sym, func_sym, modules=['numpy'])
         
