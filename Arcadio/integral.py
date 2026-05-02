@@ -8,12 +8,10 @@ class Integral:
         plt.style.use('dark_background')
     
     def numerical_integral(self, func_np, x_vals):
-        """Compute cumulative integral using trapezoidal rule"""
         y_vals = func_np(x_vals)
         integral = np.zeros_like(x_vals)
         integral[0] = 0
         
-        # Trapezoidal rule: cumulative
         for i in range(1, len(x_vals)):
             dx = x_vals[i] - x_vals[i-1]
             integral[i] = integral[i-1] + 0.5 * (y_vals[i] + y_vals[i-1]) * dx
@@ -21,7 +19,6 @@ class Integral:
         return integral
     
     def plot_with_integral(self, func_str, x_min=-10, x_max=10):
-        """Plot f(x) + ∫f(x)dx side-by-side"""
         func_sym = sympify(func_str)
         func_np = lambdify(self.x_sym, func_sym, modules=['numpy'])
         
@@ -50,6 +47,6 @@ class Integral:
         plt.tight_layout()
         plt.show()
         
-        # Print definite integral value
+        # definite integral value
         total_area = y_integral[-1]
         print(f"📏 Total integral from {x_min} to {x_max}: {total_area:.4f}")
