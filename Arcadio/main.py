@@ -36,13 +36,13 @@ def main():
     areas = Areas()
     
     while True:
-        choice = input("\n🎮 Choose (1/2/3/4/0): ").strip()
+        choice = input("\nChoose (1/2/3/4/0): ").strip()
         
         if choice == '0': 
             print("Bye!")
             break
             
-        func = input("📈 f(x): ").strip()
+        func = input("f(x): ").strip()
         if not func: continue
         
         x_min, x_max = get_x_range()
