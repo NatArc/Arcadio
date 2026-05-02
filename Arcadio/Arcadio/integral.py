@@ -9,7 +9,6 @@ class Integral:
     
     def numerical_integral(self, func_np, x_vals):
         y_vals = func_np(x_vals)
-        # ✅ STANDARDIZED NaN HANDLING
         y_vals = np.nan_to_num(y_vals, nan=0.0)
 
         integral = np.zeros_like(x_vals)
