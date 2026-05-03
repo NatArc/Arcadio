@@ -103,12 +103,12 @@ class Areas:
                 area_p = np.trapezoid(np.abs(f_prime[mask]), x_vals[mask])
                 area_i = self.definite_integral_value(f_int, a, b, x_vals)
                 print(f"    f(x):      {area_f:.4f}")
-                print(f"    |f'(x)|:   {area_p:.4f}")
+                print(f"    f'(x):   {area_p:.4f}")
                 print(f"    ∫[a,b]f:   {area_i:.4f}")
             else:
                 print(f"  Full range [{x_min:.1f}, {x_max:.1f}]:")
                 print(f"    f(x):      {np.trapezoid(f_x, x_vals):.4f}")
-                print(f"    |f'(x)|:   {np.trapezoid(np.abs(f_prime), x_vals):.4f}")
+                print(f"    f'(x):   {np.trapezoid(np.abs(f_prime), x_vals):.4f}")
                             
         except Exception as e:
             print(f"❌ Mode 4 Error: {e}")
