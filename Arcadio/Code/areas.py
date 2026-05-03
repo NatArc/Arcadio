@@ -28,7 +28,6 @@ class Areas:
         return integral
     
     def definite_integral_value(self, f_int, a, b, x_vals):
-        """F(b) - F(a) for definite integral"""
         idx_a = np.argmax(x_vals >= a)
         idx_b = np.argmax(x_vals >= b)
         return f_int[idx_b] - f_int[idx_a]
